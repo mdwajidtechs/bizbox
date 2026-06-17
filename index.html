@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Inter, Arial, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background: radial-gradient(circle at top, #1e3a8a, #0f172a);
+            padding:20px;
+        }
+
+        .wrapper{
+            width:100%;
+            max-width:1100px;
+            display:flex;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        /* LEFT PANEL */
+        .left{
+            flex:1;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color:white;
+            padding:40px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .left h1{
+            font-size:34px;
+            margin-bottom:10px;
+        }
+
+        .left p{
+            opacity:0.9;
+            line-height:1.5;
+            margin-top:10px;
+        }
+
+        .badge{
+            display:inline-block;
+            background:rgba(255,255,255,0.15);
+            padding:6px 12px;
+            border-radius:50px;
+            font-size:12px;
+            margin-bottom:20px;
+        }
+
+        /* RIGHT PANEL */
+        .right{
+            flex:1.2;
+            background:rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            padding:40px;
+        }
+
+        h2{
+            color:white;
+            margin-bottom:20px;
+        }
+
+        form{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:15px;
+        }
+
+        .full{
+            grid-column:1 / -1;
+        }
+
+        label{
+            font-size:12px;
+            color:#cbd5e1;
+            margin-bottom:5px;
+            display:block;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:12px 14px;
+            border:none;
+            outline:none;
+            border-radius:12px;
+            background:rgba(255,255,255,0.12);
+            color:white;
+            transition:0.3s;
+        }
+
+        input::placeholder,
+        textarea::placeholder{
+            color:#94a3b8;
+        }
+
+        input:focus, textarea:focus{
+            background:rgba(255,255,255,0.2);
+            box-shadow:0 0 0 2px #60a5fa;
+        }
+
+        textarea{
+            height:80px;
+            resize:none;
+        }
+
+        .file{
+            padding:10px;
+            background:rgba(255,255,255,0.1);
+        }
+
+        button{
+            grid-column:1 / -1;
+            padding:14px;
+            border:none;
+            border-radius:14px;
+            background:linear-gradient(135deg,#22c55e,#16a34a);
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 15px 30px rgba(34,197,94,0.4);
+        }
+
+        @media(max-width:900px){
+            .wrapper{
+                flex-direction:column;
+            }
+
+            form{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <div class="badge">⚡ AI Business Builder</div>
+        <h1>Create Your Business Website in Seconds</h1>
+        <p>
+            Build a professional business profile with images, logo, and details.
+            Get a ready-made website instantly powered by WajidTechs.
+        </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <h2>🚀 Business Setup</h2>
+
+        <form action="save_biz" method="POST" enctype="multipart/form-data">
+
+            <div>
+                <label>User Name</label>
+                <input type="text" name="username" placeholder="Enter username">
+            </div>
+
+            <div>
+                <label>Business Name *</label>
+                <input type="text" name="business_name" placeholder="My Business" required>
+            </div>
+
+            <div>
+                <label>Mobile *</label>
+                <input type="text" name="mobile" placeholder="+91..." required>
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="email@example.com">
+            </div>
+
+            <div class="full">
+                <label>Location</label>
+                <input type="text" name="location" placeholder="City / Area">
+            </div>
+
+            <div class="full">
+                <label>Address</label>
+                <textarea name="address" placeholder="Full business address"></textarea>
+            </div>
+
+            <div class="full">
+                <label>Description</label>
+                <textarea name="description" placeholder="About your business"></textarea>
+            </div>
+
+            <div>
+                <label>Logo</label>
+                <input class="file" type="file" name="logo">
+            </div>
+
+            <div>
+                <label>Image 1</label>
+                <input class="file" type="file" name="image1">
+            </div>
+
+            <div>
+                <label>Image 2</label>
+                <input class="file" type="file" name="image2">
+            </div>
+
+            <div>
+                <label>Image 3</label>
+                <input class="file" type="file" name="image3">
+            </div>
+
+            <div>
+                <label>Image 4</label>
+                <input class="file" type="file" name="image4">
+            </div>
+
+            <div>
+                <label>Image 5</label>
+                <input class="file" type="file" name="image5">
+            </div>
+
+            <button type="submit">✨ Generate Website</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
